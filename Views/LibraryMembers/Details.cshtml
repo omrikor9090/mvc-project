@@ -1,0 +1,5 @@
+﻿@model mvc_project.Models.LibraryMember
+@{ ViewData["Title"] = "Member Details"; }
+<h1>Member Details</h1><hr /><dl class="row"><dt class="col-sm-3">Name</dt><dd class="col-sm-9">@Model.Name</dd><dt class="col-sm-3">Email</dt><dd class="col-sm-9">@Model.Email</dd><dt class="col-sm-3">Borrowed Books</dt><dd class="col-sm-9">@Model.BorrowedBooks.Count</dd></dl>
+<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> | <a asp-action="Index">Back to List</a>
+

@@ -1,0 +1,12 @@
+﻿@model mvc_project.Models.Book
+@{ ViewData["Title"] = "Book Details"; }
+<h1>Book Details</h1><hr />
+<dl class="row">
+    <dt class="col-sm-3">Title</dt><dd class="col-sm-9">@Model.Title</dd>
+    <dt class="col-sm-3">Published Year</dt><dd class="col-sm-9">@Model.PublishedYear</dd>
+    <dt class="col-sm-3">Author</dt><dd class="col-sm-9">@Model.Author?.Name</dd>
+    <dt class="col-sm-3">Category</dt><dd class="col-sm-9">@Model.Category?.Name</dd>
+    <dt class="col-sm-3">Borrowed By</dt><dd class="col-sm-9">@Model.LibraryMember?.Name</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> | <a asp-action="Index">Back to List</a>
+
