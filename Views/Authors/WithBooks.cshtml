@@ -1,0 +1,36 @@
+@model mvc_project.Models.Author
+@{ ViewData["Title"] = "Author Books"; }
+
+<div class="parent-card">
+    <h2>@Model.Name</h2>
+    <div class="parent-fields">
+        <p><span class="field-label">Name</span> @Model.Name</p>
+        <p><span class="field-label">Country</span> @Model.Country</p>
+        <p><span class="field-label">Author ID</span> @Model.Id</p>
+    </div>
+</div>
+
+<div class="children-section">
+    <h2>Books <span class="count-badge">@Model.Books.Count()</span></h2>
+    @if (!Model.Books.Any())
+    {
+        <p class="empty-message">No books are linked to this author.</p>
+    }
+    else
+    {
+        <table class="data-table">
+            <thead><tr><th>Title</th><th>Published Year</th><th>Category ID</th><th></th></tr></thead>
+            <tbody>
+            @foreach (var book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Title</td><td>@book.PublishedYear</td><td>@book.CategoryId</td>
+                    <td><a class="btn-details" asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">Details</a></td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    <p><a asp-action="Index">Back to Authors</a></p>
+</div>
+

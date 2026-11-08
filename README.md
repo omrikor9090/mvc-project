@@ -1,6 +1,6 @@
-﻿# My Simple Library MVC Project
+# Library Project
 
-This is a beginner ASP.NET Core MVC project based on the class worksheets.
+ASP.NET Core MVC application for managing library information.
 
 ## Main parts
 
@@ -19,11 +19,13 @@ The Books controller uses `Include` so the Index and Details pages show the rela
 
 ## Running the project
 
-1. Open `mvc project.sln` in Visual Studio.
+1. Open `mvc project.slnx` in Visual Studio.
 2. Build the solution.
 3. In Package Manager Console, choose the project and run `Update-Database` if the database is not already created.
 4. Run with Ctrl+F5.
 5. Create an author, category, and member before creating a book. Use their Id values in the Book form.
 
 The connection string creates a local SQL Server database named `LibraryMvcProjectDb`.
+
+
 

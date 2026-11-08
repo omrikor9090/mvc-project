@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using mvc_project.Data;
 using mvc_project.Models;
@@ -8,6 +8,7 @@ namespace mvc_project.Controllers;
 public class AuthorsController : Controller
 {
     private readonly AppDbContext _context;
+
     public AuthorsController(AppDbContext context) => _context = context;
 
     public async Task<IActionResult> Index() => View(await _context.Authors.ToListAsync());
@@ -18,6 +19,16 @@ public class AuthorsController : Controller
         var author = await _context.Authors.Include(item => item.Books).FirstOrDefaultAsync(item => item.Id == id);
         return author == null ? NotFound() : View(author);
     }
+
+    public async Task<IActionResult> WithBooks(int? id)
+    {
+        if (id == null) return NotFound();
+        var author = await _context.Authors
+            .Include(item => item.Books)
+            .FirstOrDefaultAsync(item => item.Id == id);
+        return author == null ? NotFound() : View(author);
+    }
+
 
     public IActionResult Create() => View();
 
@@ -63,3 +74,6 @@ public class AuthorsController : Controller
         return RedirectToAction(nameof(Index));
     }
 }
+
+
+

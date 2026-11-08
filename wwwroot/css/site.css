@@ -29,3 +29,93 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+.parent-card {
+  background-color: #f6f8fb;
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.parent-card h2 {
+  color: #1f3a5f;
+  border-bottom: 2px solid #cfd8e3;
+  padding-bottom: 8px;
+}
+
+.parent-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.field-label {
+  font-weight: 600;
+  color: #44546a;
+  display: inline-block;
+  min-width: 85px;
+}
+
+.children-section {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #cfd8e3;
+}
+
+.count-badge {
+  background-color: #1f6f8b;
+  color: white;
+  border-radius: 999px;
+  padding: 3px 10px;
+  display: inline-block;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+.data-table th {
+  background-color: #1f3a5f;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+.data-table td {
+  padding: 10px;
+  border-bottom: 1px solid #d9e0e8;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #f2f5f8;
+  color: #222;
+}
+
+.data-table tr:hover {
+  background-color: #e4eef7;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-details {
+  background-color: #1f6f8b;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn-details:hover {
+  background-color: #15516a;
+  opacity: 0.9;
+}
+
+.empty-message {
+  color: #5f6368;
+  font-style: italic;
+  background-color: #f2f5f8;
+  padding: 12px;
+}
+
